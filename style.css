@@ -1,0 +1,144 @@
+
+    /* - navbar at left in desktop
+    - at least 1 media query */
+#main-doc{
+    font-family: 'Readex Pro', Arial, Helvetica, sans-serif;
+}
+
+#nav-bar{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 927px;
+    border: double green 5px;
+    border-radius: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(/bg-nav-image.jpeg) no-repeat;
+    background-size: 100% 100%;
+}
+
+h1{
+    font-size: 80px;
+    margin-left: 30px;
+    margin-top: 30px;
+    color: rgb(235, 218, 69);
+    text-shadow:0 0 10px black;
+}
+
+.nav-link{
+    margin-bottom: 35px;
+    margin-left: 20px;
+    color: white;
+    text-shadow:0 0 5px black, 0 0 2px black;
+}
+
+.nav-link:hover{
+    transform:scale(1.1);
+    color: black;
+    text-shadow:0 0 5px white, 0 0 2px white;
+    font-weight: bold;
+}
+
+.nav-link:active{
+    transform:scale(.9);
+}
+
+.main-section{
+    margin: 0 10% 150px 280px;
+    line-height: 25px;
+}
+
+h2{
+    margin-left: -10px;
+    font-size: 40px;
+}
+
+h3{
+    margin-left: 10px;
+    font-size: 27px;
+    color: rgb(10, 10, 10);
+}
+
+h4{
+    margin-left: 20px;
+    font-size: 23px;
+    color: rgb(30, 30, 30);
+}
+
+ul li {
+    margin:20px auto;
+}
+
+.main-section p{
+    margin-top: 20px;
+}
+
+span{
+    font-weight: bold;
+}
+
+img {
+    text-align: center;
+    margin: 50px auto;
+    width: 40vmax;
+    margin-left: 8%;
+    
+
+}
+
+a{
+    text-decoration: none;
+}
+
+code{
+    background: lightgray;
+    font-size: 15px;
+}
+
+.origin{
+    text-align: center;
+    margin-top:100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width:1000px) {
+    
+    .origin{
+        margin-left: 40%;
+    }
+}
+
+@media (max-width:700px) {
+
+    #nav-bar{
+        position: initial;
+        text-align: center;
+        width: auto;
+    }
+
+    h1{
+        margin-left: initial;
+    }
+    
+    h2, h3, h4{
+        text-align: center;
+    }
+
+    .main-section{
+        margin-left: 10%;
+        
+    }
+
+    img {
+        text-align: center;
+        margin: 50px auto;
+        width: 100%;
+    }
+
+    .origin{
+        margin-left: initial;
+    }
+}
+

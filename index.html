@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" integrity="ha(256|384|512)-HASH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Git Technical Documentation Page</title>
+</head>
+<body>
+<main id="main-doc">
+    <nav id="nav-bar">
+        <header>
+            <h1>Git</h1>
+        </header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Why_a_Version_Control_System_like_Git_is_needed">Why a Version Control System like Git is needed</a>
+        <a class="nav-link" href="#Usage">Usage</a>
+        <a class="nav-link" href="#Create_your_local_Git_repository">Create your local Git repository</a>
+        <a class="nav-link" href="#Add_some_small_code_now">Add some small code now</a>
+        <a class="nav-link" href="#Staging_and_Committing_the_code">Staging and Committing the code</a>
+        <a class="nav-link" href="#Git_Status_and_Git_Log">Git Status and Git Log</a>
+        <a class="nav-link" href="#Branches">Branches</a>
+        <a class="nav-link" href="#Merging">Merging</a>
+        <a class="nav-link" href="#The_Remote_git_repository">The Remote git repository</a>
+        <a class="nav-link" href="#Additional_Commands">Additional Commands</a>
+    </nav>
+    <article>
+        <section class="main-section">
+            <header>
+                <h2 id="Introduction">Introduction</h2>
+            </header>
+                <p>
+                    Git is an Open Source Distributed Version Control System. Now that's a lot of words to define Git.
+                </p>
+                <ul>
+                    <li><span>Control System:</span> This basically means that Git is a content tracker. So Git can be used 
+                        to store content.It is mostly used to store code due to the other features it provides.
+                    </li>
+                    <li>
+                        <span>Version Control System:</span> The code which is stored in Git keeps changing as more code is 
+                        added. Also, many developers can add code in parallel. So Version Control System helps in handling this 
+                        by maintaining a history of what changes have happened. Also, Git provides features like branches and 
+                        merges, which I will be covering later.
+                    </li>
+                    <li>
+                        <span>Distributed Version Control System:</span>Git has a remote repository which is stored in a server 
+                        and a local repository which is stored in the computer of each developer. This means that the code is 
+                        not just stored in a central server, but the full copy of the code is present in all the developers' 
+                        computers. Git is a Distributed Version Control System since the code is present in every developer's 
+                        computer. I will explain the concept of remote and local repositories later in this article.
+                    </li>
+                </ul>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h3 id="Why_a_Version_Control_System_like_Git_is_needed">Why a Version Control System like Git is needed</h3>
+            </header>
+            
+                <ul type="circle">
+                    <li>Real life projects generally have multiple developers working in parallel. So a version control system like 
+                        Git is needed to ensure there are no code conflicts between the developers.</li>
+                    
+                    <li>Additionally, the requirements in such projects change often. So a version control system allows developers 
+                        to revert and go back to an older version of the code.</li>
+                    
+                    <li>Finally, sometimes several projects which are being run in parallel involve the same codebase. In such a case, 
+                        the concept of branching in Git is very important.</li>
+                </ul>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h2 id="Usage">Usage</h2>
+            </header>
+            <p>
+                Download git by this <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><span>link</span></a>.<br>
+                
+                Verify if Git is installed by using the following command in the command prompt: <code>git --version</code>
+            </p>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h3 id="Create_your_local_Git_repository">Create your local Git repository</h3>
+            </header>
+            <p>
+                In your computer, create a folder for your project. Let’s call the project folder <span>"simple-git-demo"</span>.<br>
+                
+                Go into your project folder and add a local Git repository to the project using the following commands:<br>
+                
+                <code>
+                    cd simple-git-demo<br>
+                    git init
+                </code><br>
+                
+                The <code>git init</code> command adds a local Git repository to the project.
+            </p>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h3 id="Add_some_small_code_now">Add some small code now</h3>
+            </header>
+            <p>
+                Create a file called <span>"demo.txt"</span> in the project folder and add the following text into it:<br>
+                
+                <code>Initial Content</code><br>
+                
+                Here we will be demoing with just plain text instead of actual code, since the main focus of this article is 
+                on Git and not on any specific programming language.
+            </p>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h3 id="Staging_and_Committing_the_code">Staging and Committing the code</h3>
+            </header>
+            <p>
+                Committing is the process in which the code is added to the <span>local repository</span>. Before committing the code, it has 
+                to be in the <span>staging area</span>. The staging area is there to keep track of all the files which are to be committed.
+                <br>
+                Any file which is not added to the staging area will not be committed. This gives the developer control over which 
+                files need to be committed.
+            </p>
+                <h4>Staging</h4>
+            <p>
+                Use the following command for staging the file:  <code>git add demo.txt</code><br>
+                
+                In case you want to add multiple files you can use: <code>git add file1 file2 file3</code><br>
+                
+                If you want to add all the files inside your project folder to the staging area, use the following command:
+                <code>git add .</code><br>
+                
+                Use this carefully since it adds all the files and folders in your project to the staging area.
+            </p>
+                <h4>Committing</h4>
+            <p>
+                Use the following command to commit the file: <code>git commit -m "Initial Commit"</code><br>
+                
+                "Initial Commit" is the commit message here. Enter a relevant commit message to indicate what code changes were done 
+                in that particular commit.
+            </p>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h3 id="Git_Status_and_Git_Log">Git Status and Git Log</h3>
+            </header>
+            <p>
+                Now modify the <span>"demo.txt"</span> file and add the following snippet: <code>Initial Content Adding more Content</code>
+            </p>
+                <h4>Status</h4>
+            <p>
+                Use <code>git status</code> to find out information regarding what files are modified and what files are there in the staging area. It 
+                shows other information as well, which we can ignore for now.
+                The status shows that <span>"demo.txt"</span> is modified and is not yet in the staging area.
+                Now let us add <span>"demo.txt"</span> to the staging area and commit it using the following commands:<br>
+                
+                <code>git add demo.txt git commit -m "demo.txt file is modified"</code>
+            </p>
+                <h4>Log</h4>
+            <p>
+                Use <code>git log</code> to print out all the commits which have been done up until now.<br>
+                
+                The log shows the author of each commit, the date of the commit, and the commit message. 
+            </p>
+        </section>
+        <section class="main-section">
+            <header>
+                <h3 id="Branches">Branches</h3>
+            </header>
+            <p>
+                Up until now we have not created any branch in Git. By default, Git commits go into the master branch.<br>
+                
+                A branch is nothing but a pointer to the latest commit in the Git repository. So currently our master branch is a 
+                pointer to the second commit <code>"demo.txt file is modified"</code>.<br>
+                
+                Multiple branches are needed to support multiple parallel developments.Refer the image below to see how branches work.<br>
+                
+                <img id="Doc-img1" src="https://cdn-media-1.freecodecamp.org/images/sww3mboJ61C4kpLWlQYHnHWvrjX8p--VMui2" alt="Branches image"><br>
+                
+                Initially, commit 1 and commit 2 were done in the master branch. After commit 2 a new Branch called as "Test" is 
+                created, and commit 3 and commit 4 are added to the test branch.<br>
+                
+                At the same time, a different commit 3 and commit 4 are added to the master branch. Here we can see that after Commit 2, 
+                two parallel developments are being done in 2 separate branches.<br>
+    
+                The Test Branch and the Master Branch have diverged here and have different code — the code from Test Branch can be merged with 
+                the Master branch using git merge. This will be covered later.
+            </p>
+                <h4>Create a new Branch in local</h4>
+            <p>
+                Create a new branch called <span>test</span> using the following command: <code>git branch test</code><br>
+                
+                This command creates the <span>"test"</span> branch.<br>
+                
+                We are still in the context of the master branch. In order to switch to the <span>test</span> branch. use the following command:<br>
+                <code>git checkout test</code><br>
+    
+                Now we are in the <span>test</span> branch.You can list out all the branches in local using the following command:<br>
+                <code>git branch</code>
+            </p>
+                <h4>Do some Commits in the new Branch</h4>
+            <p>
+                Modify <span>"demo.txt"</span> by adding the following snippet: <code>Initial Content Adding more Content Adding some Content from test Branch</code><br>
+                
+                Now stage and commit using the following commands: <code>git add demo.txt git commit -m "Test Branch Commit"</code><br>
+    
+                This commit was done in the Test Branch, and now Test Branch is ahead of Master Branch by 1 commit — as the test branch also 
+                includes the 2 commits from the master branch.<br>
+    
+                You can verify the commit history in Test Branch using: <code>git log</code>
+            </p>
+        </section>
+        <section class="main-section">
+            <header>
+                <h3 id="Merging">Merging</h3>
+            </header>
+            <p>
+                Currently, Test Branch is ahead of the Master by 1 commit. Let’s say that now we want all the code in the Test Branch to be brought 
+                back to the Master Branch. This is where <code>git merge</code> is very useful.<br>
+    
+                In order to merge the code from the test branch into the master branch, follow these steps:<br>
+    
+                First go back to the master branch: <code>git checkout master</code><br>
+                
+                Then run the <span>merge</span> command: <code>git merge test</code><br>
+    
+                After running these 2 commands, the merge should be successful. In this example, there are no conflicts.<br>
+    
+                But in real projects, there will be conflicts when a merge is being done. Resolving the conflict is something which comes with experience, 
+                so as you work more with Git you will be able to get the hang of resolving conflicts.<br>
+    
+                Run <code>git log</code> now and you will notice that the master also has 3 commits.<br>
+            </p>
+        </section>
+        <section class="main-section">
+            <header>
+                <h3 id="The_Remote_git_repository">The Remote git repository</h3>
+            </header>
+            <p>
+                Until now, we have been working only in the local repository. Each developer will work in their local repository but eventually, they will 
+                push the code into a remote repository. Once the code is in the remote repository, other developers can see and modify that code.
+            </p>
+    
+            <img id="Doc-img2" src="https://cdn-media-1.freecodecamp.org/images/O-6UdGYVsEjM-oJmtJ5KQpQnXIBOCZoB22X1" alt="Showing remote and local repositories">
+    
+                <h4>GitHub</h4>
+            <p>
+                Here we will be using GitHub for the remote repository.<br>
+    
+                Go to <a href="https://github.com/"><span>github.com</span></a> and create an account.
+                After registering in the GitHub homepage, click on <span>Start a Project</span> to create a new git repository. Give the repository a name and click <span>Create Repository</span>.
+                Give the name as <span>"git-blog-demo"</span>.<br>
+                This will create a remote repository in GitHub, and when you open the repository, a page like the image below will open up:
+                <img id="Doc-img3" src="https://cdn-media-1.freecodecamp.org/images/LWpWCg5LTo7m-IkZW1io-194VWZ61di5CIGY" alt="github screen-shot"><br>
+                The repository URL is the highlighted portion <span>"https://github.com/aditya-sridhar/git-blog-demo.git"</span><br>
+    
+                In order to point your local repository to the remote repository, use the following command:<br>
+                
+                <code>git remote add origin [repository url]</code><br>
+    
+                This pushes the code from the master branch in the local repository to the master branch in the remote repository.
+            </p>
+        </section>
+    
+        <section class="main-section">
+            <header>
+                <h3 id="Additional_Commands">Additional Commands</h3>
+            </header>
+                <h4>Git Pull</h4>
+            <p>
+                git pull is used to pull the latest changes from the remote repository into the local repository. The remote repository code is updated continuously 
+                by various developers, hence git pull is necessary: <code>git pull origin master</code>
+            </p>
+                <h4>Git Clone</h4>
+            <p>
+                git clone is used to clone an existing remote repository into your computer. The command for this is:<br>
+                <code>git clone [repository url]</code>
+            </p>
+        </section>
+    
+        <p class="origin">Document taken from <a href="https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/"><span>freeCodeCamp.com</span></a></p>
+    </article>
+    
+</main>   
+</body>
+</html>
