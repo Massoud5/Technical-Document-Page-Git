@@ -10,7 +10,7 @@ What I learned:
 
 - To correspond "nav-bar" links to the document "header"s 
 
-- Document styleing with HTML and CSS
+- Document styling with HTML and CSS
 
 - To use the "code" tag to have a sementical Doc.
 
